@@ -1,0 +1,75 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+}
+
+.button {
+  position: relative;
+  /* התאמת הגרדיאנט לצבעי SmallBox */
+  background: linear-gradient(to bottom, #f0e2dc, rgba(240, 226, 220, 0.3));
+  border: 1.5px solid rgba(255, 254, 252, 0.6);
+  color: #8a7654;  /* צבע הטקסט בדיוק כמו ב-SmallBox */
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  font-family: "AssistantR", sans-serif;
+  direction: rtl;
+  border-radius: 15px;  /* רדיוס זהה ל-SmallBox */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);  /* אפקט הטשטוש מ-SmallBox */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* צל זהה ל-SmallBox */
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.button:hover {
+  transform: translateY(-2px);  /* תנועה זהה ל-SmallBox */
+  border: 1.5px solid rgba(255, 254, 252, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* שיפור אנימציית הברק עם צבעי SmallBox */
+.shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 254, 252, 0) 25%,
+    rgba(255, 254, 252, 0.4) 50%,  /* התאמת צבע הברק לגווני SmallBox */
+    rgba(255, 254, 252, 0) 75%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: shine 8s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-100%, -100%) rotate(25deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(25deg);
+  }
+}

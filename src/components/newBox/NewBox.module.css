@@ -1,0 +1,307 @@
+.NewBox {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 2% auto;
+  /* רקע לינארי עדין עם פסטל כחול ואדום חזקים יותר */
+  background: linear-gradient(145deg, 
+    #fdfeff 0%, 
+    #fcfdff 12%, 
+    #fbfcfe 25%, 
+    #fafbfd 37%, 
+    #f9fafc 50%, 
+    #f8f9fb 62%, 
+    #f7f8fa 75%, 
+    #f6f7f9 87%, 
+    #f5f6f8 100%);
+  border: 1px solid rgba(230, 235, 245, 0.4);
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 24px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* צל פנימי עדין ובועתי */
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 4px rgba(0, 0, 0, 0.02),
+    inset 2px 0 6px rgba(0, 0, 0, 0.015),
+    inset -2px 0 6px rgba(0, 0, 0, 0.015),
+    inset 0 -1px 3px rgba(255, 255, 255, 0.8),
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.NewBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(253, 252, 255, 0.9) 0%, 
+    rgba(251, 252, 255, 0.7) 20%, 
+    rgba(255, 251, 253, 0.6) 40%, 
+    rgba(252, 253, 255, 0.5) 60%, 
+    rgba(254, 251, 252, 0.4) 80%, 
+    rgba(251, 252, 254, 0.3) 100%);
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.NewBox:hover {
+  transform: translateY(-1px);
+  border: 1px solid rgba(215, 225, 240, 0.5);
+  /* צל פנימי מוגבר בהובר */
+  box-shadow: 
+    inset 0 3px 10px rgba(0, 0, 0, 0.04),
+    inset 0 2px 6px rgba(0, 0, 0, 0.025),
+    inset 3px 0 8px rgba(0, 0, 0, 0.02),
+    inset -3px 0 8px rgba(0, 0, 0, 0.02),
+    inset 0 -2px 5px rgba(255, 255, 255, 0.9),
+    0 6px 16px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    box-shadow: 
+      inset 0 2px 8px rgba(0, 0, 0, 0.03),
+      inset 0 1px 4px rgba(0, 0, 0, 0.02),
+      inset 2px 0 6px rgba(0, 0, 0, 0.015),
+      inset -2px 0 6px rgba(0, 0, 0, 0.015),
+      inset 0 -1px 3px rgba(255, 255, 255, 0.8),
+      0 3px 9px rgba(0, 0, 0, 0.03);
+  }
+  50% {
+    box-shadow: 
+      inset 0 3px 10px rgba(0, 0, 0, 0.04),
+      inset 0 2px 6px rgba(0, 0, 0, 0.025),
+      inset 3px 0 8px rgba(0, 0, 0, 0.02),
+      inset -3px 0 8px rgba(0, 0, 0, 0.02),
+      inset 0 -2px 5px rgba(255, 255, 255, 0.9),
+      0 5px 14px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  font-family: "AssistantR", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: right;
+  margin: 3% auto;
+  direction: rtl;
+  width: 90%;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  /* טקסט קלאסי עם ניגודיות עדינה */
+  color: #444444;
+  text-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9),
+    0 0 2px rgba(255, 255, 255, 0.3);
+  /* רקע עדין לטקסט */
+  background: linear-gradient(to right, 
+    rgba(0, 0, 0, 0.02) 0%, 
+    rgba(0, 0, 0, 0.01) 50%, 
+    rgba(0, 0, 0, 0.005) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 8px 0;
+}
+
+.title {
+  font-size: 1.7rem;
+  font-family: "Assistant", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: right;
+  padding-right: 12px;
+  direction: rtl;
+  width: 100%;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  /* כותרת קלאסית עם ניגודיות מעולה */
+  color: #333333;
+  text-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.95),
+    0 2px 4px rgba(255, 255, 255, 0.4),
+    0 0 1px rgba(0, 0, 0, 0.1);
+  /* רקע דקורטיבי עדין לכותרת */
+  background: linear-gradient(to right, 
+    rgba(0, 0, 0, 0.03) 0%, 
+    rgba(0, 0, 0, 0.015) 50%, 
+    rgba(0, 0, 0, 0.01) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 6px 0;
+}
+
+.icon {
+  display: flex;
+  width: 30%;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  opacity: 0.8;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.08));
+  transition: all 0.3s ease;
+}
+
+.NewBox:hover .icon {
+  opacity: 0.95;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.12));
+}
+
+/* מדיה קוריס לניידים */
+@media only screen and (max-width: 350px) {
+  .NewBox {
+    width: 280px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 3% auto;
+    padding: 18px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, 
+      #fefeff 0%, 
+      #fdfdfe 25%, 
+      #fcfcfd 50%, 
+      #fbfbfc 75%, 
+      #fafafb 100%);
+  }
+  
+  .description {
+    font-size: 1rem;
+    font-family: "AssistantR", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: right;
+    margin: 2% auto;
+    direction: rtl;
+    width: 90%;
+    color: #444444;
+    text-shadow: 
+      0 1px 1px rgba(255, 255, 255, 0.9),
+      0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-family: "Assistant";
+    text-align: right;
+    margin: 3% auto;
+    direction: rtl;
+    width: 60%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: #333333;
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    margin: 2% auto;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  .NewBox {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 3% auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, 
+      #fefeff 0%, 
+      #fdfdfe 30%, 
+      #fcfcfd 60%, 
+      #fbfbfc 100%);
+  }
+  
+  .description {
+    font-size: 1rem;
+    font-family: "AssistantR";
+    text-align: right;
+    margin: 2% auto;
+    direction: rtl;
+    width: 90%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: #444444;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+    font-family: "Assistant";
+    text-align: right;
+    margin: 3% auto;
+    direction: rtl;
+    width: 60%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: #333333;
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+    margin: 2% auto;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 550px) {
+  .NewBox {
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 3% auto;
+    padding: 22px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, 
+      #fefeff 0%, 
+      #fdfdfe 20%, 
+      #fcfdfe 40%, 
+      #fbfcfd 60%, 
+      #fafbfc 80%, 
+      #f9fafb 100%);
+  }
+  
+  .description {
+    font-size: 1.05rem;
+    font-family: "AssistantR";
+    text-align: right;
+    margin: 2% auto;
+    direction: rtl;
+    width: 95%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: #444444;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    font-family: "Assistant";
+    text-align: right;
+    margin: 3% auto;
+    direction: rtl;
+    width: 60%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: #333333;
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    margin: 2% auto;
+  }
+}

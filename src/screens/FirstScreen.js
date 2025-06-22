@@ -28,7 +28,7 @@ const FirstScreen = () => {
         <div className={styles.mainTextContainer}>
           <div className={styles.mainTextInner}>
             <p className={styles.mainText}>
-              לאחר אלפי לקוחות ועשור בתחום היופי <br/> נתי ונטורה מציגה:
+              לאחר אלפי לקוחות ועשור בתחום היופי 
             </p>
           </div>
         </div>
@@ -39,7 +39,7 @@ const FirstScreen = () => {
           </div>
           <div className={styles.subtitleContainer}>
             <p className={styles.subtitleText}>
-             אקדמיה שתפתח לך דלת לקריירה רווחית בעולם היופי
+             האקדמיה שתפתח לך דלת לקריירה רווחית בעולם היופי
             </p>
           </div>
         </div>
@@ -55,13 +55,13 @@ const FirstScreen = () => {
             className={styles.button}
             onClick={scrollToForm}
           >
-            נתי, בואי נדבר
+            אני רוצה לשמוע על הקורסים
           </button>
           <button 
             className={styles.button}
             onClick={scrollDown}
           >
-            ספרי לי עוד קצת
+         אני רוצה לשמוע על הטיפולים שלכן
           </button>
         </div>
       </div>

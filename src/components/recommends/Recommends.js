@@ -56,7 +56,7 @@ const Recommendations = () => {
           ))}
         </Slider>
       </div>
-  
+          <Button text="נתי, קחי אותי להרשמה!"/>
     </>
   );
 };

@@ -1,264 +1,201 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
-  BookOpen, 
-  Microscope, 
-  Spray, 
-  Scissors, 
-  Layout, 
-  Timer,
-  Ruler,
-  Heart,
-  Tool,
-  Shield,
-  GraduationCap,
-  Users,
-  Camera,
-  DollarSign,
-  Package
+  BookOpen, Sparkles, Camera, Award, Brain, AlertTriangle, 
+  Search, Zap, Wrench, Microscope, Package, Lightbulb, 
+  Users, Target, Layers, UserCheck, CheckCircle, Focus, 
+  Trophy, Instagram, Plus, Minus, Palette, TrendingUp,
+  Clock, Star, Heart, Crown, Gem, Coffee, ChevronDown, ChevronUp
 } from 'lucide-react';
-import { GiEyelashes, GiBarbedNails } from 'react-icons/gi';
-import { PiScissorsFill } from "react-icons/pi";
 import styles from './Courses.module.css';
 import Button from '../button/Button';
-import CommonBenefits from '../benefits/Benefits';
-import BenefitCard from '../bonuses/Bonus';
 
-const getMainIconForCourse = (title) => {
-  if (title.includes('ריסים')) return <GiEyelashes className={styles.mainIcon} />;
-  if (title.includes("לק ג'ל")) return <GiBarbedNails className={styles.mainIcon} />;
-  if (title.includes('גבות')) return <PiScissorsFill className={styles.mainIcon} />;
-  return <GraduationCap className={styles.mainIcon} />;
-};
+const AdditionalCourses = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedCourses, setExpandedCourses] = useState({});
 
-const getIconForDetail = (detail) => {
-  if (detail.includes('אנטומ')) return <Microscope />;
-  if (detail.includes('מחלות')) return <Heart />;
-  if (detail.includes('עיקור')) return <Shield />;
-  if (detail.includes('שיופי')) return <Scissors />;
-  if (detail.includes('סימטריה')) return <Ruler />;
-  if (detail.includes('מניקור')) return <Scissors />;
-  if (detail.includes('מבנה')) return <Layout />;
-  if (detail.includes('השלמת')) return <BookOpen />;
-  if (detail.includes('תעודת')) return <GraduationCap />;
-  if (detail.includes('שיווק')) return <Camera />;
-  if (detail.includes('תמחור')) return <DollarSign />;
-  if (detail.includes('ערכה')) return <Package />;
-  if (detail.includes('מודליסטית')) return <Users />;
-  return <Timer />;
-};
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
 
-const SyllabusCard = ({ content }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [height, setHeight] = useState(0);
-  const contentRef = useRef(null);
+  const toggleCourse = (courseNumber) => {
+    setExpandedCourses(prev => ({
+      ...prev,
+      [courseNumber]: !prev[courseNumber]
+    }));
+  };
 
-  useEffect(() => {
-    if (isOpen) {
-      setHeight(contentRef.current.scrollHeight);
-    } else {
-      setHeight(0);
+  const courses = [
+    {
+      number: 1,
+      icon: <Award className={styles.sessionIcon} />,
+      title: "קורס לק ג'ל מתחילות - מסלול בסיס",
+      duration: "4 מפגשים | 21 שעות",
+      content: [
+        { text: "אנטומיה ומבנה הציפורן + פתולוגיות ומחלות נפוצות", icon: <Brain className={styles.contentIcon} /> },
+        { text: "כלי עבודה בסיסיים ומבוא למניקור יבש", icon: <Wrench className={styles.contentIcon} /> },
+        { text: "סטריליזציה, היגיינה וסביבת עבודה בטוחה", icon: <Sparkles className={styles.contentIcon} /> },
+        { text: "מוצרי לק ג'ל ושיטת עבודה מלאה", icon: <Package className={styles.contentIcon} /> },
+        { text: "שיטת מבנה אנטומי ייחודית", icon: <Target className={styles.contentIcon} /> },
+        { text: "תיקונים מקצועיים (משי, ג'ל בנייה, פוליג'ל)", icon: <CheckCircle className={styles.contentIcon} /> },
+        { text: "צילום מקצועי לתיעוד העבודות", icon: <Camera className={styles.contentIcon} /> },
+        { text: "תרגול מעשי על מודליסטיות אמיתיות", icon: <Users className={styles.contentIcon} /> }
+      ]
+    },
+    {
+      number: 2,
+      icon: <TrendingUp className={styles.sessionIcon} />,
+      title: "שיעור תוכן עסקי וקישוטים מתקדמים",
+      duration: "מפגש אחד | 5-6 שעות",
+      content: [
+        { text: "מיתוג אישי ובניית אווירה בקליניקה", icon: <Crown className={styles.contentIcon} /> },
+        { text: "תמחור טיפולים חכם וניהול רווחיות", icon: <TrendingUp className={styles.contentIcon} /> },
+        { text: "מעקב אחר הכנסות ויעדים עסקיים", icon: <Target className={styles.contentIcon} /> },
+        { text: "פתיחת וניהול אינסטגרם עסקי מקצועי", icon: <Instagram className={styles.contentIcon} /> },
+        { text: "צילום מתקדם, עריכה וסטוריז מושכים", icon: <Camera className={styles.contentIcon} /> },
+        { text: "ניהול יומן, תקנון ומיינדסט עצמאית", icon: <Clock className={styles.contentIcon} /> },
+        { text: "קישוטים שימושיים וטכניקות מתקדמות", icon: <Palette className={styles.contentIcon} /> },
+        { text: "בניית בסיס לקוחות וקשרי לקוחות", icon: <Heart className={styles.contentIcon} /> }
+      ]
+    },
+    {
+      number: 3,
+      icon: <Crown className={styles.sessionIcon} />,
+      title: "קורס מלא - מתחילות לעצמאיות",
+      duration: "5 מפגשים | 27 שעות",
+      content: [
+        { text: "כל התוכן של הקורס הבסיס המקצועי", icon: <BookOpen className={styles.contentIcon} /> },
+        { text: "שיעור תוכן עסקי מלא וקישוטים מתקדמים", icon: <Gem className={styles.contentIcon} /> },
+        { text: "ליווי אישי צמוד לאורך כל המסע", icon: <UserCheck className={styles.contentIcon} /> },
+        { text: "כלים שיווקיים מתקדמים לבניית עסק", icon: <TrendingUp className={styles.contentIcon} /> },
+        { text: "מענה לשאלות ותמיכה גם לאחר הקורס", icon: <Heart className={styles.contentIcon} /> },
+        { text: "התאמה מלאה לעבודה עצמאית רווחית", icon: <Trophy className={styles.contentIcon} /> },
+        { text: "בסיס מוצק לקריירה מקצועית מצליחה", icon: <Star className={styles.contentIcon} /> },
+        { text: "ביטחון מלא ויכולת עבודה מהיום הראשון", icon: <Focus className={styles.contentIcon} /> }
+      ]
+    },
+    {
+      number: 4,
+      icon: <Sparkles className={styles.sessionIcon} />,
+      title: "קורס הרמת ריסים מקצועי",
+      duration: "2 מפגשים | 7-8 שעות + בונוס",
+      content: [
+        { text: "אנטומיית העין והריס + שלבי צמיחת הריסים", icon: <Brain className={styles.contentIcon} /> },
+        { text: "בטיחות והיגיינה - מתי לא מבצעים טיפול", icon: <AlertTriangle className={styles.contentIcon} /> },
+        { text: "סוגי ריסים מלאכותיים: אורכים, עוביים, תלתלים", icon: <Layers className={styles.contentIcon} /> },
+        { text: "הכרת סוגי הדבקים והתאמה ללקוחה", icon: <Package className={styles.contentIcon} /> },
+        { text: "סגנונות עיצוב (טבעי, בובתי, חתולי)", icon: <Palette className={styles.contentIcon} /> },
+        { text: "התאמת מבנה הריסים למבנה העין", icon: <Target className={styles.contentIcon} /> },
+        { text: "תרגול מלא על דוגמנית + הסרת ריסים", icon: <Users className={styles.contentIcon} /> },
+        { text: "תמחור ושיווק + צילום מקצועי", icon: <Camera className={styles.contentIcon} /> },
+        { text: "ערכת עבודה מקצועית + תעודת הסמכה", icon: <Award className={styles.contentIcon} /> }
+      ]
+    },
+    {
+      number: 5,
+      icon: <Focus className={styles.sessionIcon} />,
+      title: "קורס עיצוב גבות מקצועי",
+      duration: "3 מפגשים | 2 שבועיים + בונוס",
+      content: [
+        { text: "מבוא תיאורטי על עולם הגבות וחשיבותן בהבעת הפנים", icon: <BookOpen className={styles.contentIcon} /> },
+        { text: "ניתוח צורת הפנים והתאמת סגנון לפי פרופורציות", icon: <Search className={styles.contentIcon} /> },
+        { text: "שלוש טכניקות מרכזיות: פינצטה, חוט ושעווה", icon: <Wrench className={styles.contentIcon} /> },
+        { text: "צביעה והתאמה לגוון העור והשיער", icon: <Palette className={styles.contentIcon} /> },
+        { text: "יצירת סימטריה בגבות בעזרת חוט ומדידות מדויקות", icon: <Target className={styles.contentIcon} /> },
+        { text: "שיקום ותיקון גבות דלילות או פגומות", icon: <CheckCircle className={styles.contentIcon} /> },
+        { text: "הכרות עם מיקרופיגמנטציה ושיטות מתקדמות", icon: <Microscope className={styles.contentIcon} /> },
+        { text: "ערכת עבודה מקצועית + תעודת הסמכה", icon: <Award className={styles.contentIcon} /> }
+      ]
     }
-  }, [isOpen]);
+  ];
 
   return (
-    <div className={styles.container}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={styles.toggleButton}
-      >
-        <div className={styles.buttonContent}>
-          <div className={styles.iconWrapper}>
-            {getMainIconForCourse(content.title)}
-          </div>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.title}>{content.title}</h2>
-            <p className={styles.subtitle}>{content.subtitle}</p>
-          </div>
+    <div className={styles.additionalCoursesContainer}>
+      <div className={styles.additionalHeader}>
+        <h1 className={styles.additionalMainTitle}>הקורסים שלנו</h1>
+        <h2 className={styles.additionalSubtitle}>ריכזתי עבורך את הדרכים שלך להתחיל את הדרך שלך בעולם היופי</h2>
+        <div className={styles.additionalCourseInfo}>
+          <span>5 מסלולי לימוד</span>
+          <span>מתחילות עד מקצועיות</span>
+          <span>ליווי אישי וצמוד</span>
         </div>
-        <div className={`${styles.toggleIconWrapper} ${isOpen ? styles.open : ''}`}>
-          <span className={styles.toggleIcon}>{isOpen ? '−' : '+'}</span>
-        </div>
-      </button>
-
-      <div 
-        style={{ height: `${height}px` }}
-        className={styles.contentWrapper}
-      >
-        <div ref={contentRef} className={styles.content}>
-          {content.note && (
-            <div className={styles.noteSection}>
-              <p className={styles.note}>{content.note}</p>
-            </div>
-          )}
-          
-          <div className={styles.detailsSection}>
-            <h3 className={styles.sectionTitle}>{content.detailsTitle || 'בקורס נלמד על:'}</h3>
-            <ul className={styles.detailsList}>
-              {content.details.map((detail, index) => (
-                <li key={index} className={styles.detailItem}>
-                  <div className={styles.detailIconWrapper}>
-                    {getIconForDetail(detail)}
-                  </div>
-                  <span className={styles.detailText}>{detail}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {content.kitDetails && (
-            <div className={styles.detailsSection}>
-              <h3 className={styles.sectionTitle}>בנוסף תקבלי גם:</h3>
-              <ul className={styles.detailsList}>
-                {content.kitDetails.map((detail, index) => (
-                  <li key={index} className={styles.detailItem}>
-                    <div className={styles.detailIconWrapper}>
-                      <Package />
-                    </div>
-                    <span className={styles.detailText}>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {content.price && (
-            <div className={styles.priceSection}>
-              <span className={styles.price}>{content.price}</span>
-            </div>
-          )}
-
-          {content.cta && (
-            <div className={styles.ctaSection}>
-              <Button text={content.cta} message={content.message} />
-            </div>
-          )}
+        
+        <div className={styles.additionalExpandButtonContainer}>
+          <button 
+            className={styles.additionalExpandButton} 
+            onClick={toggleExpanded}
+            aria-label={isExpanded ? "הסתר קורסים" : "הצג קורסים"}
+          >
+            {isExpanded ? (
+              <>
+                <Minus className={styles.additionalExpandIcon} />
+                <span>לחצי כדי להסתיר את תיאור הקורסים</span>
+              </>
+            ) : (
+              <>
+                <Plus className={styles.additionalExpandIcon} />
+                <span>לחצי כדי לצפות בכל הקורסים</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
+
+      {isExpanded && (
+        <div className={styles.additionalCoursesContainerInner}>
+          {courses.map((course) => (
+            <div key={course.number} className={styles.additionalCourseCard}>
+              <div className={styles.additionalCourseHeader}>
+                <div className={styles.additionalCourseNumber}>מסלול {course.number}</div>
+                <div className={styles.additionalIconContainer}>
+                  {course.icon}
+                </div>
+              </div>
+              
+              <h3 className={styles.additionalCourseTitle}>{course.title}</h3>
+              
+              <div className={styles.additionalCourseDetails}>
+                <div className={styles.additionalDuration}>{course.duration}</div>
+                <button 
+                  className={styles.additionalCourseExpandButton}
+                  onClick={() => toggleCourse(course.number)}
+                  aria-label={expandedCourses[course.number] ? "פחות פרטים" : "עוד פרטים"}
+                >
+                  {expandedCourses[course.number] ? (
+                    <>
+                      <ChevronUp className={styles.additionalCourseExpandIcon} />
+                      <span>פחות פרטים</span>
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown className={styles.additionalCourseExpandIcon} />
+                      <span>עוד פרטים</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              
+              {expandedCourses[course.number] && (
+                <div className={styles.additionalContentContainer}>
+                  {course.content.map((item, index) => (
+                    <div key={index} className={styles.additionalContentItem}>
+                      <span className={styles.additionalContentIconWrapper}>
+                        {item.icon}
+                      </span>
+                      <span className={styles.additionalContentText}>
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
+                  
+                  <Button text="נתי, קחי אותי להרשמה"/>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-const SyllabusCards = () => {
-  const browLiftingCourse = {
-    title: "מסלול עיצוב גבות + הרמת גבות",
-    subtitle: "המסלול כולל 2 תעודות בינלאומיות מטעם חברת טויה ו2 תעודות מקצועיות מטעמי",
-    note: "* הקורס אפשרי רק במידה ולמדת עיצוב גבות. במידה ולא למדת, יש מסלול משולב ומוזל יחד עם למידת עיצוב גבות",
-    detailsTitle: "מה כולל המסלול:",
-    details: [
-      "חוברת הדרכה מפורטת של כל הטיפול",
-      "הצהרת בריאות",
-      "למידת שלבי ההרמה",
-      "הכרת כל החומרים",
-      "למי מתאים הטיפול ולמי לא",
-      "אלרגיות צביעה, גזירה וניקוי נכון",
-      "לימוד עבודה על שערה קשה וטיפים שלי לתוצאה מובטחת ובטוחה ללא נזק לגבות"
-    ],
-    kitDetails: [
-      "מחמם שעווה מקצועי",
-      "ערכת שעווה מלאה",
-      "חוט גדול להסרת שיער",
-      "מספריים מקצועיות",
-      "פינצטה איכותית",
-      "מברשת לגבות",
-      "ערכת צבע מקצועית לגבות", 
-      "חמצן לערבוב צבע",
-      "כוסית ערבוב צבע",
-      "שפדלות חד פעמיות",
-      "ערכת שלושת השלבים (מספיק ל-30 לקוחות)",
-      "שמפו מנטרל שמנוניות",
-      "כורכום אנטי דלקתי",
-      "מרכך שיער מקצועי", 
-      "מגן עור",
-      "שמן ארגן טיפולי"
-    ],
-    cta: "סוזנה, המסלול המשולב מעניין אותי!",
-    message: "היי סוזנה, אני מתעניינת במסלול המשולב של עיצוב והרמת גבות ואשמח לשמוע פרטים נוספים!"
-  };  
-
-  const gelCourse = {
-    title: "קורס לק ג'ל למתחילות",
-    subtitle: "הקורס כולל 4 מפגשים, סך הכל 20 שעות לימוד",
-    details: [
-      "אנטומיית הציפורן",
-      "מחלות ובעיות רפואיות בציפורניים",
-      "הורדת העיקור והחיטוי",
-      "שיופי צורה",
-      "סימטריה", 
-      "מניקור משולב",
-      "פיסול מבנה אנטומי",
-      "השלמת ציפורן"
-    ],
-    cta: "סוזנה, קורס לק ג'ל נשמע לי מתאים!",
-    message: "היי סוזנה, אני מתעניינת בקורס לק ג'ל למתחילות ואשמח לשמוע פרטים נוספים!"
-  };
-
-  const lashCourse = {
-    title: "קורס הדבקת ריסים",
-    subtitle: "תלמדי להדביק ריסים גם לעצמך! קורס פרטני 1:1, 6-7 שעות מרוכזות",
-    detailsTitle: "מה נלמד בקורס:",
-    details: [  
-      "מהי הדבקת ריסים בשיטה החדשה",
-      "הבדלים בין השיטות הקיימות בשוק",
-      "מחזור צמיחה ונשירה",
-      "מבנה עיניים",
-      "סוגי ריסים, אורך וקימור",
-      "הכנה נכונה של העין",
-      "הסרה בטוחה",
-      "למי מותר/אסור לבצע טיפול",
-      "הכרת כל סוגי החומרים",
-      "תרגול מעשי", 
-      "עבודה על מודליסטית - טיפול מלא",
-      "שיעור שיווק וצילום לניהול עסק מצליח", 
-      "שיעור תמחור והגדרת נהלי עבודה",
-      "שיעור מקיף על פתיחת עסק",
-      "חוברת הדרכה מפורטת"
-    ],
-    kitDetails: [
-      "ערכה מלאה לתחילת עבודה מיידית"
-    ],
-    cta: "סוזנה, קורס הדבקת ריסים נשמע לי מתאים!",
-    message: "היי סוזנה, אני מתעניינת בקורס הדבקת הריסים ואשמח לשמוע עוד פרטים על הקורס!"
-  };
-
-  const eyebrowCourse = {
-    title: "קורס עיצוב גבות טבעיות",
-    subtitle: "קורס פרטני 1:1, 2 מפגשים של 5 שעות", 
-    detailsTitle: "מה נלמד בקורס:",
-    details: [
-      "למידת מורפולוגיה של הגבות",
-      "התאמה נכונה למבנה פנים",
-      "בעיות שכיחות בגבות",
-      "שיקום גבות דלילות",
-      "הכרת שיטות עבודה",
-      "צביעה והדגשת גבות",
-      "עבודה על שערה קשה",
-      "סטריליזציה",
-      "גזירה ומריטה נכונה",
-      "עבודה על מודליסטית - טיפול מלא",
-      "שיעור שיווק וצילום לניהול עסק מצליח",
-      "שיעור תמחור והגדרת נהלי עבודה", 
-      "שיעור מקיף על פתיחת עסק",
-      "חוברת הדרכה מפורטת"
-    ],
-    kitDetails: [
-      "ערכה מלאה לתחילת עבודה מיידית"
-    ],
-    cta: "סוזנה, קורס עיצוב גבות נשמע לי מתאים!",
-    message: "היי סוזנה, אני מתעניינת בקורס עיצוב הגבות ואשמח לשמוע פרטים נוספים על הקורס!"
-  };
-
-  return (
-    <>
-      <div className={styles.cardsContainer}>
-        <SyllabusCard content={gelCourse} />
-        <SyllabusCard content={lashCourse} />
-        <SyllabusCard content={eyebrowCourse} />
-        <SyllabusCard content={browLiftingCourse} />  
-      </div>
-      <BenefitCard/>
-      <Button text="סוזנה, אני רוצה לשמוע עוד!" message="היי סוזנה, אשמח לשמוע עוד ולהתייעץ איתך לגבי הקורסים שלך"/>
-    </>
-  );
-};
-
-export default SyllabusCards;
+export default AdditionalCourses;

@@ -3,11 +3,17 @@ import styles from "./Button.module.css";
 
 const Button = (props) => {
   const handleButtonClick = () => {
-    const phoneNumber = "+972532733353";
-    const message =props.message ? props.message: "היי סוזנה ,אני רוצה לשמוע ממך עוד על..";
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, "_blank");
+    // גלילה חלקה לאלמנט עם ID "טופס" עם offset של 150px מעל
+    const formElement = document.getElementById('טופס');
+    if (formElement) {
+      const elementPosition = formElement.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 150;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (

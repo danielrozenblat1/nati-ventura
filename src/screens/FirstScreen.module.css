@@ -62,28 +62,30 @@
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: linear-gradient(45deg, 
-    rgba(215, 155, 175, 0.08) 0%, 
-    rgba(145, 185, 210, 0.08) 20%, 
-    rgba(215, 155, 175, 0.06) 40%, 
-    rgba(145, 185, 210, 0.06) 60%,
-    rgba(215, 155, 175, 0.08) 80%, 
-    rgba(145, 185, 210, 0.08) 100%);
+  background: linear-gradient(135deg, 
+    rgba(240, 192, 178, 0.07) 0%, 
+    rgba(228, 187, 175, 0.09) 15%, 
+    rgba(235, 200, 188, 0.06) 30%, 
+    rgba(245, 190, 165, 0.08) 45%,
+    rgba(220, 182, 170, 0.07) 60%, 
+    rgba(238, 195, 180, 0.09) 75%,
+    rgba(225, 185, 172, 0.06) 90%,
+    rgba(240, 192, 178, 0.08) 100%);
   z-index: -1;
   border-radius: 8px;
-  filter: blur(0.5px);
-  opacity: 0.7;
-  background-size: 200% 200%;
-  animation: shimmer 3s linear infinite;
+  filter: blur(0.8px);
+  opacity: 0.8;
+  background-size: 300% 300%;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
 .mainTextInner {
   background-color: #fefefe;
   padding: 20px;
   border-radius: 6px;
-  box-shadow: inset 0 0 10px rgba(215, 155, 175, 0.12), 
-              inset 0 0 20px rgba(145, 185, 210, 0.08),
-              0 2px 8px rgba(215, 155, 175, 0.06);
+  box-shadow: inset 0 0 12px rgba(240, 192, 178, 0.10), 
+              inset 0 0 24px rgba(228, 187, 175, 0.06),
+              0 3px 10px rgba(235, 190, 175, 0.08);
 }
 
 .mainText {
@@ -118,22 +120,27 @@
   font-family: 'Assistant', sans-serif;
   font-size: 2.5rem;
   background: linear-gradient(
-    90deg, 
-    #D79BAF 0%, 
-    #91B9D2 12%, 
-    #C8A5BA 25%, 
-    #8FB5CE 37%, 
-    #D79BAF 50%, 
-    #91B9D2 62%, 
-    #C8A5BA 75%, 
-    #8FB5CE 87%, 
-    #D79BAF 100%
+    125deg, 
+    #F0C0B2 0%, 
+    #E4BBB0 8%, 
+    #EBC8BC 16%, 
+    #D8B5A8 24%,
+    #F5BEA5 32%, 
+    #DCC0B0 40%, 
+    #E8C3B5 48%, 
+    #F2C5B8 56%,
+    #D5B2A5 64%, 
+    #EEC1B4 72%, 
+    #E1B9AC 80%, 
+    #F0C0B2 88%,
+    #E7BEB1 96%,
+    #F0C0B2 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: smoothShimmer 8s ease-in-out infinite;
-  background-size: 300% auto;
+  animation: smoothShimmer 10s ease-in-out infinite;
+  background-size: 400% auto;
   font-weight: 300;
 }
 
@@ -187,7 +194,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #D79BAF;
+  color: #E4BBB0;
   font-size: 14px;
 }
 
@@ -218,8 +225,8 @@
   font-weight: bold;
   font-size: 16px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(215, 155, 175, 0.25);
-  box-shadow: 0 2px 4px rgba(145, 185, 210, 0.08);
+  border: 1px solid rgba(240, 192, 178, 0.28);
+  box-shadow: 0 2px 5px rgba(228, 187, 175, 0.09);
   overflow: hidden;
   z-index: 1;
 }
@@ -232,12 +239,11 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(45deg, 
-    rgba(215, 155, 175, 0.04) 0%, 
-    rgba(145, 185, 210, 0.04) 20%, 
-    rgba(215, 155, 175, 0.05) 40%, 
-    rgba(145, 185, 210, 0.05) 60%,
-    rgba(215, 155, 175, 0.04) 80%, 
-    rgba(145, 185, 210, 0.04) 100%);
+    rgba(240, 192, 178, 0.04) 0%, 
+    rgba(228, 187, 175, 0.06) 25%, 
+    rgba(235, 200, 188, 0.05) 50%, 
+    rgba(220, 182, 170, 0.06) 75%,
+    rgba(240, 192, 178, 0.04) 100%);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -245,9 +251,9 @@
 
 .button:hover {
   transform: scale(1.03);
-  border-color: rgba(145, 185, 210, 0.4);
-  color: #91B9D2;
-  box-shadow: 0 4px 8px rgba(215, 155, 175, 0.10);
+  border-color: rgba(228, 187, 175, 0.45);
+  color: #DCC0B0;
+  box-shadow: 0 4px 12px rgba(240, 192, 178, 0.12);
 }
 
 .button:hover::before {
@@ -256,10 +262,19 @@
 
 @keyframes shimmer {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 25%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 25% 50%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 0% 0%;
   }
 }
 
@@ -267,26 +282,32 @@
   0% {
     background-position: 0% 50%;
   }
-  12% {
-    background-position: 15% 35%;
+  10% {
+    background-position: 20% 30%;
   }
-  25% {
-    background-position: 35% 25%;
+  20% {
+    background-position: 45% 20%;
   }
-  37% {
-    background-position: 55% 40%;
+  30% {
+    background-position: 65% 40%;
+  }
+  40% {
+    background-position: 80% 60%;
   }
   50% {
-    background-position: 75% 50%;
+    background-position: 100% 50%;
   }
-  62% {
-    background-position: 85% 65%;
+  60% {
+    background-position: 85% 70%;
   }
-  75% {
-    background-position: 65% 75%;
+  70% {
+    background-position: 60% 80%;
   }
-  87% {
-    background-position: 35% 60%;
+  80% {
+    background-position: 35% 65%;
+  }
+  90% {
+    background-position: 15% 35%;
   }
   100% {
     background-position: 0% 50%;

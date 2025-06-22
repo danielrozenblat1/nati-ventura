@@ -4,9 +4,13 @@ import brain from "../icons/wired-outline-426-brain-hover-pinch.json"
 import keep from "../icons/wired-outline-1776-staircase-running-hover-running.json"
 import patience from "../icons/wired-outline-628-yoga-female-hover-pinch (1).json"
 import NewBox from "../components/newBox/NewBox"
+import AdditionalCourses from "../components/courses/Courses"
 
 const ThirdScreen = () => {
    return <>
+   
+
+    
        <div className={styles.title}>חשוב לי שתדעי</div>
        <div className={styles.description}>תחום הביוטי הוא אחד התחומים הכי מתגמלים היום בשוק עם ביקוש שלא ייגמר</div>
        <div className={styles.title}>אבל לא כולן יכולות להצליח בו!</div>
@@ -19,7 +23,7 @@ const ThirdScreen = () => {
            />
            <NewBox 
                title="התמדה וסבלנות" 
-               description="יומן מלא לא מגיע בדרך קסם ולא בן לילה. זו עבודה יום יומית, תרגול מתמיד ואמונה בתהליך. רק מי שתעמוד בקצב הזה ותבינה שבתחום הזה זו ריצת מרתון ולא ספרינט תראה איך החלומות הופכים למציאות" 
+               description="יומן מלא לא מגיע בדרך קסם ולא בן לילה. זו עבודה יום יומית, תרגול מתמיד ואמונה בתהליך. רק מי שתעמוד בקצב הזה ותבין שבתחום הזה זו ריצת מרתון ולא ספרינט תראה איך החלומות הופכים למציאות" 
                icon={keep}
            />
            <NewBox 
@@ -28,6 +32,8 @@ const ThirdScreen = () => {
                icon={patience}
            />
        </div>
+
+        
         <div className={styles.title}>וכדי להיות באמת בטוחה שהתחום בשבילך</div>
      
    </>

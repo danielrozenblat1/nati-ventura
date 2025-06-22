@@ -34,6 +34,7 @@ const AboutMe = () => {
 <Brows/>
 <Lashes/>
 <Recommendations/>
+
     </>
   );
 };

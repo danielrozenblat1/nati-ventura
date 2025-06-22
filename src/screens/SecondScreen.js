@@ -7,7 +7,7 @@ import wake from "../icons/wired-lineal-804-sun-morph-night (1).json"
 const SecondScreen=()=>{
 
   return <> 
-  <div className={styles.title}>בואי נדבר תכלס</div>
+  <div className={styles.title} id="קורסים">בואי נדבר תכלס</div>
 <div className={styles.description}>את כאן מסיבה אחת בלבד - את אוהבת את תחום הביוטי ומכירה את היתרונות שהוא מביא איתו</div>
 <div className={styles.row}>
 

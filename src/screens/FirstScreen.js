@@ -1,27 +1,9 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import styles from './FirstScreen.module.css';
 import natiImage from "../images/נתי ונטורה תמונה ראשית.png"; // החלף עם הנתיב לתמונה שלך
 
 const FirstScreen = () => {
-  // Function to scroll to form
-  const scrollToForm = () => {
-    const formSection = document.getElementById("טופס");
-    if (formSection) {
-      window.scrollTo({
-        top: formSection.offsetTop - 150,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // Function to scroll 150px down
-  const scrollDown = () => {
-    window.scrollTo({
-      top: window.pageYOffset + 150,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.intro}>
@@ -51,18 +33,24 @@ const FirstScreen = () => {
         </div>
         
         <div className={styles.buttonContainer}>
-          <button 
+          <Link 
+            to="קורסים"
+            smooth={true}
+            duration={1500}
+            offset={-150}
             className={styles.button}
-            onClick={scrollToForm}
           >
             אני רוצה לשמוע על הקורסים
-          </button>
-          <button 
+          </Link>
+          <Link 
+            to="טיפולים"
+            smooth={true}
+            duration={1500}
+            offset={-150}
             className={styles.button}
-            onClick={scrollDown}
           >
-         אני רוצה לשמוע על הטיפולים שלכן
-          </button>
+            אני רוצה לשמוע על הטיפולים שלכן
+          </Link>
         </div>
       </div>
     </div>

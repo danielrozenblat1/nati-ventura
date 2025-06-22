@@ -10,7 +10,7 @@ const FormScreen = (props) => {
   const reasonRef = useRef('');
 
   const serverUrl = "https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead";
-  const reciver = "danielroz12345@gmail.com";
+  const reciver = "";
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -20,8 +20,6 @@ const FormScreen = (props) => {
     const email = emailRef?.current?.value;
     const reason = reasonRef?.current?.value;
 
-    console.log("🔍 שלב 1: קריאה לפונקציה התחילה");
-    console.log("📦 קלט:", { name, phone, email, reason });
 
     if (name.trim().length <= 2) {
       alert("אנא הכניסי שם מלא ");

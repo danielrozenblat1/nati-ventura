@@ -58,19 +58,20 @@ const NavBarNew = () => {
     }
   }, [isMenuOpen]);
 
-  // Enhanced WhatsApp functionality with user experience improvements
-  const handleWhatsAppClick = useCallback(() => {
-    const phoneNumber = "+972547289417";
-    const message = "היי נתי, אני רוצה לשמוע ממך עוד על השירותים שלך 🌟";
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  // Scroll to form function instead of WhatsApp
+  const handleFormScroll = useCallback(() => {
+    const formElement = document.getElementById('טופס');
+    if (formElement) {
+      formElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
     
     // Add subtle haptic feedback simulation
     if (navigator.vibrate) {
       navigator.vibrate(50);
     }
-    
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   }, []);
 
   // Close menu when clicking outside (accessibility improvement)
@@ -137,8 +138,8 @@ const NavBarNew = () => {
           
           <button 
             className={styles.menuButton} 
-            onClick={handleWhatsAppClick}
-            aria-label="פתח שיחה בוואטסאפ"
+            onClick={handleFormScroll}
+            aria-label="גלול לטופס"
             type="button"
           >
             <div className={styles.buttonContent}>
@@ -186,16 +187,7 @@ const NavBarNew = () => {
             </div>
             
             {/* Additional content can be added here */}
-            <div style={{ 
-              textAlign: 'center', 
-              color: '#5a4f3f', 
-              fontSize: '1.2rem',
-              fontWeight: '300',
-              marginTop: '20px',
-              opacity: '0.8'
-            }}>
-              ברוכים הבאים לעולם של נתי ונטורה
-            </div>
+     
           </div>
         </div>
       )}

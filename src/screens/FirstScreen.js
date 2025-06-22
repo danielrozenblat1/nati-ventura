@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import styles from './FirstScreen.module.css';
-import natiImage from "../images/נתי ונטורה תמונה ראשית.png"; // החלף עם הנתיב לתמונה שלך
+import natiImage from "../images/נתי ונטורה תמונה ראשית.png";
+import Loader from '../components/loader/Loader';
 
 const FirstScreen = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageLoaded(true); // גם במקרה של שגיאה, נסתיר את הלודר
+  };
+
+  // אם התמונה עדיין לא נטענה, הצג רק את הלודר
+  if (!imageLoaded) {
+    return (
+      <>
+        <Loader />
+        {/* התמונה נטענת ברקע */}
+        <img 
+          src={natiImage} 
+          alt="נתי ונטורה אקדמיה" 
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          style={{ display: 'none' }}
+        />
+      </>
+    );
+  }
+
+  // אחרי שהתמונה נטענה, הצג את כל הקומפוננטה
   return (
     <div className={styles.container}>
       <div className={styles.intro}>
@@ -28,7 +57,11 @@ const FirstScreen = () => {
         
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
-            <img src={natiImage} alt="נתי ונטורה אקדמיה" className={styles.image} />
+            <img 
+              src={natiImage} 
+              alt="נתי ונטורה אקדמיה" 
+              className={styles.image}
+            />
           </div>
         </div>
         

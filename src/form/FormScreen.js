@@ -10,7 +10,7 @@ const FormScreen = (props) => {
   const reasonRef = useRef('');
 
   const serverUrl = "https://dynamic-server-dfc88e1f1c54.herokuapp.com/leads/newLead";
-  const reciver = "";
+  const reciver = " nuritdaniel78@gmail.com";
 
   const submitHandler = async (e) => {
     e.preventDefault();

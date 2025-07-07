@@ -3,16 +3,16 @@ import styles from './RecommendsBrows.module.css';
 
 
 // Import your images
-import result1 from "../../images/נתי ונטורה הרמת ריסים 1.png";
-import result2 from "../../images/נתי ונטורה הרמת ריסים 2.png";
-import result3 from "../../images/נתי ונטורה הרמת ריסים 3.png";
-import result4 from "../../images/נתי ונטורה הרמת ריסים 4.png";
+import result1 from "../../images/נתי ונטורה הרמת ריסים חדש 1.png";
+import result2 from "../../images/נתי ונטורה הרמת ריסים חדש 2.png";
+import result3 from "../../images/נתי ונטורה הרמת ריסים חדש 3.png";
+
 
 
 
 const Lashes = () => {
   const images = [
-    result1, result2, result3, result4, 
+    result1, result2, result3,
 
   ];
 

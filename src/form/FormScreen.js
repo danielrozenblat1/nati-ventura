@@ -119,10 +119,9 @@ const FormScreen = (props) => {
             disabled={isSubmitting || submitted}
           >
             <option value="" disabled>בחרי סיבת פנייה</option>
-            <option value="קורס ציפורניים">קורס ציפורניים</option>
-            <option value="קורס איפור קבוע">קורס איפור קבוע</option>
-            <option value="קורס עיצוב גבות">קורס עיצוב גבות</option>
-            <option value="מתלבטת בין כל הקורסים">מתלבטת בין כל הקורסים</option>
+            <option value="קורסים">הקורסים שלנו</option>
+            <option value="טיפולים">הטיפולים שלנו</option>
+ 
           </select>
           <button 
             type="submit" 

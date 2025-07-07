@@ -72,8 +72,8 @@ const MyServices = () => {
   };
 
   const generateWhatsAppLink = (title) => {
-    const message = encodeURIComponent(`היי עידית הגעתי מהדף, אשמח לשמוע עוד על ${title}`);
-    return `https://wa.me/972527752556?text=${message}`;
+    const message = encodeURIComponent(`היי נתי הגעתי מהדף, אשמח לשמוע עוד על ${title}`);
+    return `https://wa.me/972547289417?text=${message}`;
   };
 
   return (

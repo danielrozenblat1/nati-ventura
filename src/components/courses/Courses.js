@@ -77,7 +77,7 @@ const AdditionalCourses = () => {
       number: 4,
       icon: <Sparkles className={styles.sessionIcon} />,
       title: "קורס הרמת ריסים מקצועי",
-      duration: "2 מפגשים | 7-8 שעות + בונוס",
+      duration: "2 מפגשים + בונוס",
       content: [
         { text: "אנטומיית העין והריס + שלבי צמיחת הריסים", icon: <Brain className={styles.contentIcon} /> },
         { text: "בטיחות והיגיינה - מתי לא מבצעים טיפול", icon: <AlertTriangle className={styles.contentIcon} /> },
@@ -94,7 +94,7 @@ const AdditionalCourses = () => {
       number: 5,
       icon: <Focus className={styles.sessionIcon} />,
       title: "קורס עיצוב גבות מקצועי",
-      duration: "3 מפגשים | 2 שבועיים + בונוס",
+      duration: "2 מפגשים + בונוס",
       content: [
         { text: "מבוא תיאורטי על עולם הגבות וחשיבותן בהבעת הפנים", icon: <BookOpen className={styles.contentIcon} /> },
         { text: "ניתוח צורת הפנים והתאמת סגנון לפי פרופורציות", icon: <Search className={styles.contentIcon} /> },

@@ -11,9 +11,13 @@ import result2 from "../../images/נתי ונטורה המלצות 2.png";
 import result3 from "../../images/נתי ונטורה המלצות 3.png";
 import result4 from "../../images/נתי ונטורה המלצות 4.png";
 import result5 from "../../images/נתי ונטורה המלצות 5.png";
+import result6 from "../../images/נתי ונטורה המלצות 6.png";
+import result7 from "../../images/נתי ונטורה המלצות 7.png";
+import result8 from "../../images/נתי ונטורה המלצות 8.png";
+import result9 from "../../images/נתי ונטורה המלצות 9.png";
 const Recommendations = () => {
   const images = [
-    result1, result2, result3,result4,result5
+    result1, result2, result3,result4,result5,result6,result7,result8,result9
   ];
 
   const sliderSettings = {

@@ -12,6 +12,7 @@ import ForthScreen from './screens/ForthScreen';
 import AdditionalCourses from './components/courses/Courses';
 import MyServices from './components/treatments/Treatments';
 import FifthScreen from './screens/FifthScreen';
+import Certificates from './components/recommends/Certificates';
 
 function App() {
 return <>
@@ -29,6 +30,7 @@ return <>
 
 <FifthScreen/>
     <ForthScreen/>
+
     <ByMe/>
   </>
 }

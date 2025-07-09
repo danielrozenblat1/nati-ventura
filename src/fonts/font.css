@@ -10,3 +10,9 @@
   font-weight:300;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Comrant';
+  src: url('./Cormorant-VariableFont_wght.ttf') format('truetype');
+  font-weight:600;
+  font-style: normal;
+}

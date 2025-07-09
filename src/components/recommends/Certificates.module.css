@@ -1,0 +1,252 @@
+.title {
+  font-family: "OpenSans", sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1rem auto 0rem;
+
+  text-shadow: 0 2px 4px rgba(162, 162, 162, 0.2);
+  line-height: 1.4;
+  max-width: 92%;
+  direction: rtl;
+  position: relative;
+  letter-spacing: -1.5px;
+  padding: 0 1rem;
+  z-index: 1;
+  transition: all 0.5s ease;
+  word-wrap: break-word;
+}
+
+.explain {
+  font-size: 25px;
+  direction: rtl;
+  width: 65%;
+  text-align: center;
+  margin: 2% auto;
+  font-family: "AssistantR";
+}
+
+.mainContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.mainImage {
+  width: 25%; /* ברירת מחדל למחשב - יותר צר */
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+/* הקרוסלה האחת */
+.carouselContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 245px; /* הקטנה ב-30% (350 * 0.7) */
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.7) 30%, 
+    rgba(255, 255, 255, 0.9) 70%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.scrollTrack {
+  display: flex;
+  width: fit-content;
+  animation: scroll 60s linear infinite; /* הקצרתי את הזמן בחצי למהירות כפולה */
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+  padding-top: 35px; /* הקטנה ב-30% (50 * 0.7) */
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  height: 210px; /* הקטנה ב-30% (300 * 0.7) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-height: 210px; /* הקטנה ב-30% (300 * 0.7) */
+  max-width: 490px; /* הקטנה ב-30% (700 * 0.7) */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%); /* שינוי ל-33.33% כי יש לנו 3 קבוצות זהות */
+  }
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 450px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .explain {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .mainImage {
+    width: 70%; /* רוחב צר יותר בטלפון */
+  }
+
+  .carouselContainer {
+    height: 196px; /* הקטנה ב-30% (280 * 0.7) */
+  }
+
+  .imageWrapper {
+    height: 168px; /* הקטנה ב-30% (240 * 0.7) */
+  }
+
+  .image {
+    max-height: 168px; /* הקטנה ב-30% (240 * 0.7) */
+    max-width: 378px; /* הקטנה ב-30% (540 * 0.7) */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .scrollTrack {
+    padding-top: 28px; /* הקטנה ב-30% (40 * 0.7) */
+    animation: scroll 50s linear infinite; /* מהירות מותאמת לטלפונים */
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .explain {
+    font-size: 20px;
+    width: 80%;
+  }
+
+  .mainImage {
+    width: 40%; /* רוחב צר יותר לטאבלטים קטנים */
+  }
+
+  .carouselContainer {
+    height: 224px; /* הקטנה ב-30% (320 * 0.7) */
+  }
+
+  .imageWrapper {
+    height: 189px; /* הקטנה ב-30% (270 * 0.7) */
+  }
+
+  .image {
+    max-height: 189px; /* הקטנה ב-30% (270 * 0.7) */
+    max-width: 420px; /* הקטנה ב-30% (600 * 0.7) */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .scrollTrack {
+    padding-top: 32px; /* הקטנה ב-30% (45 * 0.7) */
+    animation: scroll 55s linear infinite; /* זמן מותאם לטאבלטים */
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1050px) {
+  .title {
+    font-size: 1.9rem;
+  }
+  
+  .explain {
+    font-size: 22px;
+    width: 75%;
+  }
+
+  .mainImage {
+    width: 30%; /* רוחב צר יותר לטאבלטים גדולים */
+  }
+
+  .carouselContainer {
+    height: 238px; /* הקטנה ב-30% (340 * 0.7) */
+  }
+
+  .imageWrapper {
+    height: 210px; /* הקטנה ב-30% (300 * 0.7) */
+  }
+
+  .image {
+    max-height: 210px; /* הקטנה ב-30% (300 * 0.7) */
+    max-width: 462px; /* הקטנה ב-30% (660 * 0.7) */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .scrollTrack {
+    padding-top: 35px; /* הקטנה ב-30% (50 * 0.7) */
+    animation: scroll 58s linear infinite;
+  }
+}
+
+@media only screen and (min-width: 1051px) {
+  .mainImage {
+    width: 25%; /* רוחב 25% במחשב - יותר צר */
+  }
+
+  .scrollTrack {
+    padding-top: 35px; /* הקטנה ב-30% (50 * 0.7) */
+    animation: scroll 60s linear infinite; /* מהירות מותאמת למחשב */
+  }
+}

@@ -1,7 +1,6 @@
 .container {
   width: 100%;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,17 +107,19 @@
   flex-direction: column;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .levelUpContainer {
   position: relative;
   display: inline-block;
   margin: 0;
+  width: 100%;
 }
 
 .levelUpText {
-  font-family: 'Assistant', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Comrant', sans-serif;
+  font-size: 3rem;
   background: linear-gradient(
     125deg, 
     #F0C0B2 0%, 
@@ -139,9 +140,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  width: 100%;
   animation: smoothShimmer 10s ease-in-out infinite;
   background-size: 400% auto;
   font-weight: 300;
+  display: block;
+  text-align: center;
 }
 
 /* Special style for the English LEVEL UP */
@@ -151,6 +155,7 @@
 
 .subtitleContainer {
   margin-top: 10px;
+  width: 100%;
 }
 
 .subtitleText {
@@ -160,6 +165,7 @@
   text-align: center;
   margin: 0;
   font-weight: normal;
+  width: 100%;
 }
 
 .imageContainer {
@@ -215,20 +221,29 @@
 
 .button {
   flex: 1;
-  padding: 14px 18px;
-  border-radius: 6px;
-  background-color: transparent;
-  color: #5a5a5a;
+  padding: 20px 25px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, 
+    rgba(240, 192, 178, 0.3) 0%, 
+    rgba(228, 187, 175, 0.35) 25%, 
+    rgba(235, 200, 188, 0.32) 50%, 
+    rgba(220, 182, 170, 0.34) 75%,
+    rgba(240, 192, 178, 0.3) 100%);
+  color: #333;
   cursor: pointer;
   position: relative;
   font-family: 'AssistantR', sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(240, 192, 178, 0.28);
-  box-shadow: 0 2px 5px rgba(228, 187, 175, 0.09);
+  border: 3px solid rgba(228, 187, 175, 0.6);
+  box-shadow: 0 6px 20px rgba(240, 192, 178, 0.35),
+              0 4px 8px rgba(228, 187, 175, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.4);
   overflow: hidden;
   z-index: 1;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
 
 .button::before {
@@ -239,25 +254,38 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(45deg, 
-    rgba(240, 192, 178, 0.04) 0%, 
-    rgba(228, 187, 175, 0.06) 25%, 
-    rgba(235, 200, 188, 0.05) 50%, 
-    rgba(220, 182, 170, 0.06) 75%,
-    rgba(240, 192, 178, 0.04) 100%);
+    rgba(240, 192, 178, 0.4) 0%, 
+    rgba(228, 187, 175, 0.45) 25%, 
+    rgba(235, 200, 188, 0.42) 50%, 
+    rgba(220, 182, 170, 0.47) 75%,
+    rgba(240, 192, 178, 0.4) 100%);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .button:hover {
-  transform: scale(1.03);
-  border-color: rgba(228, 187, 175, 0.45);
-  color: #DCC0B0;
-  box-shadow: 0 4px 12px rgba(240, 192, 178, 0.12);
+  transform: scale(1.08) translateY(-4px);
+  border-color: rgba(228, 187, 175, 0.8);
+  color: #222;
+  box-shadow: 0 10px 30px rgba(240, 192, 178, 0.5),
+              0 6px 15px rgba(228, 187, 175, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, 
+    rgba(240, 192, 178, 0.45) 0%, 
+    rgba(228, 187, 175, 0.5) 25%, 
+    rgba(235, 200, 188, 0.47) 50%, 
+    rgba(220, 182, 170, 0.48) 75%,
+    rgba(240, 192, 178, 0.45) 100%);
+  font-weight: 800;
 }
 
 .button:hover::before {
   opacity: 1;
+}
+
+.button:active {
+  transform: scale(1.02);
 }
 
 @keyframes shimmer {
@@ -327,6 +355,7 @@
     justify-content: space-between;
     padding-top: 15px;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .mainText {
@@ -382,7 +411,7 @@
   
   .button {
     font-size: 16px;
-    padding: 12px 10px;
+    padding: 16px 12px;
     flex: 1 0 40%;
   }
 }
@@ -400,6 +429,7 @@
     justify-content: space-between;
     padding-top: 15px;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .mainText {
@@ -453,7 +483,7 @@
   
   .button {
     font-size: 16px;
-    padding: 14px 22px;
+    padding: 17px 24px;
   }
 }
 
@@ -471,6 +501,7 @@
     justify-content: space-between;
     padding-top: 15px;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .mainText {
@@ -517,7 +548,7 @@
   
   .button {
     font-size: 17px;
-    padding: 14px 12px;
+    padding: 17px 16px;
   }
 }
 
@@ -534,6 +565,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .mainText {
@@ -574,6 +606,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .mainText {
@@ -611,6 +644,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .levelUpText {
@@ -644,6 +678,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .levelUpText {
@@ -677,6 +712,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .subtitleText {
@@ -706,6 +742,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .subtitleText {
@@ -735,6 +772,7 @@
     height: 90vh;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: 100%;
   }
   
   .subtitleText {
@@ -753,3 +791,4 @@
     margin-bottom: 0;
   }
 }
+

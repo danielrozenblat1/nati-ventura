@@ -109,21 +109,62 @@
   width: 120px;
   height: 90px;
   border-radius: 10px;
-  overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 254, 252, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .serviceImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  object-fit: contain;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 254, 252, 0.6),
+    inset 0 -1px 0 rgba(255, 254, 252, 0.3);
+  border: 1.5px solid rgba(255, 254, 252, 0.6);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.serviceImage img::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  background: linear-gradient(45deg, 
+    #f0e2dc 0%,
+    rgba(255, 254, 252, 0.8) 10%,
+    #f5e8e0 20%,
+    rgba(255, 254, 252, 0.9) 30%,
+    #f0e2dc 40%,
+    rgba(255, 254, 252, 0.7) 50%,
+    #f5e8e0 60%,
+    rgba(255, 254, 252, 0.8) 70%,
+    #f0e2dc 80%,
+    rgba(255, 254, 252, 0.9) 90%,
+    #f0e2dc 100%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: shimmer 3s infinite linear;
+  background-size: 200% auto;
+  z-index: -1;
 }
 
 .serviceImage:hover img {
-  transform: scale(1.05);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 2px 0 rgba(255, 254, 252, 0.8),
+    inset 0 -2px 0 rgba(255, 254, 252, 0.5);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .serviceInfo {
@@ -264,16 +305,11 @@
   width: 100%;
   height: 120px;
   border-radius: 8px;
-  overflow: visible;
   transition: transform 0.3s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.galleryImage:hover {
-  transform: scale(1.05);
 }
 
 .galleryImage img {
@@ -283,14 +319,55 @@
   height: auto;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 254, 252, 0.4);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 254, 252, 0.6),
+    inset 0 -1px 0 rgba(255, 254, 252, 0.3);
+  border: 1.5px solid rgba(255, 254, 252, 0.6);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.galleryImage img::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  background: linear-gradient(45deg, 
+    #f0e2dc 0%,
+    rgba(255, 254, 252, 0.8) 10%,
+    #f5e8e0 20%,
+    rgba(255, 254, 252, 0.9) 30%,
+    #f0e2dc 40%,
+    rgba(255, 254, 252, 0.7) 50%,
+    #f5e8e0 60%,
+    rgba(255, 254, 252, 0.8) 70%,
+    #f0e2dc 80%,
+    rgba(255, 254, 252, 0.9) 90%,
+    #f0e2dc 100%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: shimmer 3s infinite linear;
+  background-size: 200% auto;
+  z-index: -1;
+}
+
+.galleryImage:hover {
+  transform: scale(1.05);
 }
 
 .galleryImage:hover img {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transform: scale(1.02);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 2px 0 rgba(255, 254, 252, 0.8),
+    inset 0 -2px 0 rgba(255, 254, 252, 0.5);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .ctaButton {

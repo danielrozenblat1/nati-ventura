@@ -21,6 +21,11 @@ import lashes2 from "../../images/נתי ונטורה הרמת ריסים 2.png"
 import lashes3 from "../../images/נתי ונטורה הרמת ריסים 3.png";
 import lashes4 from "../../images/נתי ונטורה הרמת ריסים 4.png";
 
+
+import brows1 from "../../images/נתי ונטורה עיצוב גבות 1.png";
+import brows2 from "../../images/נתי ונטורה עיצוב גבות 2.png";
+import brows3 from "../../images/נתי ונטורה עיצוב גבות 3.png";
+
 const MyServices = () => {
   const [openDrawer, setOpenDrawer] = useState(null);
 
@@ -62,8 +67,8 @@ const MyServices = () => {
       suitableFor: ["למי שרוצה צורת גבות מושלמת", "למי שיש לו גבות לא מעוצבות", "למי שמחפש מראה מסודר ומושלם", "למי שרוצה להדגיש את יופי העיניים"],
       problemSolved: ["יוצר צורת גבות מושלמת לפי צורת הפנים", "מסדר ומעצב את הגבות בצורה מקצועית", "מחזיר ביטחון עצמי ומראה מושלם"],
       duration: "30-45 דקות",
-      image: null,
-      galleryImages: []
+      image: brows1,
+      galleryImages: [brows1,brows2,brows3,]
     }
   ];
 

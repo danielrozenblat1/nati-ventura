@@ -39,7 +39,8 @@ const FirstScreen = () => {
         <div className={styles.mainTextContainer}>
           <div className={styles.mainTextInner}>
             <p className={styles.mainText}>
-              לאחר אלפי לקוחות ועשור בתחום היופי 
+              לאחר אלפי לקוחות ועשור בתחום היופי <br/>
+              נתי ונטורה מציגה 
             </p>
           </div>
         </div>
@@ -82,7 +83,7 @@ const FirstScreen = () => {
             offset={-150}
             className={styles.button}
           >
-            אני רוצה לשמוע על הטיפולים שלכן
+            אני רוצה לשמוע על הטיפולים
           </Link>
         </div>
       </div>

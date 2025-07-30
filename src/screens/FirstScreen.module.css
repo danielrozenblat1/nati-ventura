@@ -179,7 +179,7 @@
 }
 
 .imageContainer img {
-  width: 30vw;
+  width: 25vw;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -461,12 +461,12 @@
   }
   
   .imageContainer {
-    margin-bottom: 10px;
+    margin-bottom: 0;
     flex-shrink: 1;
   }
   
   .imageContainer img {
-    width: 100vw;
+   width: 70vw;
   }
   
   .imagePlaceholder,
